@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="hospital.list">
+      <field name="name">hospital list</field>
+      <field name="model">hospital.hospital</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hospital.action_window_patient">
+      <field name="name">Pacientes</field>
+      <field name="res_model">hospital.patient</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital.action_window_doctor">
+      <field name="name">Medicos</field>
+      <field name="res_model">hospital.doctor</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital.action_window_admision">
+      <field name="name">Ingresos</field>
+      <field name="res_model">hospital.admision</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="hospital.action_server">
+      <field name="name">hospital server</field>
+      <field name="model_id" ref="model_hospital_hospital"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+     <!-- Menú raíz -->
+    <menuitem name="Hospital" id="hospital.menu_root"/>
+
+    <!-- Submenús -->
+    
+    <menuitem name="Pacientes" id="hospital.menu_patient" parent="hospital.menu_root"
+              action="hospital.action_window_patient"/>
+
+    
+    <menuitem name="Medicos" id="hospital.menu_doctor" parent="hospital.menu_root"
+              action="hospital.action_window_doctor"/>
+
+    <menuitem name="Ingresos" id="hospital.menu_admision" parent="hospital.menu_root"
+              action="hospital.action_window_admision"/>
+
+
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="hospital.menu_1_list" parent="hospital.menu_1"
+              action="hospital.action_window"/>
+    <menuitem name="Server to list" id="hospital" parent="hospital.menu_2"
+              action="hospital.action_server"/>
+-->
+  </data>
+</odoo>

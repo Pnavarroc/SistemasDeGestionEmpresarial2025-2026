@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+<!--Vista de lista-->
+        <record model="ir.ui.view" id="hospital.admision_list">
+        <field name="name">hospital admision list</field>
+        <field name="model">hospital.admision</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="patient_id"/>
+                <field name="bedroom_number"/>
+                <field name="bed_number"/>
+                <field name="admision_date"/>
+                <field name="symptoms"/>
+                <field name="discharge_date"/>
+                <field name="doctor_id"/>
+            </list>
+        </field>
+        </record>
+
+
+        <!--Vista de formulario-->
+        <record model="ir.ui.view" id="hospital.admision_form">
+        <field name="name">hospital admision form</field>
+        <field name="model">hospital.admision</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="bedroom_number"/>
+                    <field name="bed_number"/>
+                    <field name="admision_date"/>
+                    <field name="symptoms"/>
+                    <field name="discharge_date"/>
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+
+                </group>
+            </form>
+        </field>
+        </record>
+    </data>
+</odoo>
