@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="hospital2.paciente_list">
+            <field name="name">hospital2 paciente list</field>
+            <field name="model">hospital2.paciente</field>
+            <field name="arch" type="xml">
+                <list>
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="direccion"/>
+                <field name="poblacion"/>
+                <field name="provincia"/>
+                <field name="codigo_postal"/>
+                <field name="telefono"/>
+                <field name="fecha_nacimiento"/>
+                <field name="edad" readonly="1"/>
+                </list>
+            </field>
+        </record>
+
+
+
+
+        <record model="ir.ui.view" id="hospital2_paciente_form">
+    <field name="name">hospital2 paciente form</field>
+    <field name="model">hospital2.paciente</field>
+    <field name="arch" type="xml">
+        <form>
+
+            <group>
+                <!-- COLUMNA IZQUIERDA -->
+                <group>
+                    <separator string="Datos personales"/>
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="edad" readonly="1"/>
+                    <field name="telefono"/>
+                </group>
+
+                <!-- COLUMNA DERECHA -->
+                <group>
+                    <separator string="Dirección"/>
+                    <field name="direccion"/>
+                    <field name="poblacion"/>
+                    <field name="provincia"/>
+                    <field name="codigo_postal"/>
+                </group>
+            </group>
+
+            <!-- INGRESOS -->
+            <separator string="Ingresos hospitalarios"/>
+            <field name="ingreso_ids">
+                <list editable="bottom">
+                    <field name ="paciente_id"/>
+                    <field name="fecha_ingreso"/>
+                    <field name="fecha_alta"/>
+                    <field name="numero_habitacion"/>
+                    <field name="medico_id"/>
+                </list>
+            </field>
+
+        </form>
+    </field>
+</record>
+
+
+    
+    </data>
+
+</odoo>

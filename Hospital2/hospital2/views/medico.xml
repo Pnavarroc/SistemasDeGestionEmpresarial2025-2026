@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="hospital2.medico_list">
+            <field name="name">hospital2 medico list</field>
+            <field name="model">hospital2.medico</field>
+            <field name="arch" type="xml">
+                <list>
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="telefono"/>
+                <field name="especialidad"/>
+                <field name="numero_colegiado"/>
+
+                </list>
+            </field>
+        </record>
+
+
+
+
+    
+    </data>
+
+</odoo>

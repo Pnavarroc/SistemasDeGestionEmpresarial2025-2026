@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="hospital2.ingreso_list">
+                <field name="name">hospital2 ingreso list</field>
+                <field name="model">hospital2.ingreso</field>
+                <field name="arch" type="xml">
+                    <list>
+                    <field name="fecha_ingreso" />
+                    <field name="fecha_alta"/>
+                    <field name="paciente_id"/>
+                    <field name="medico_id"/>
+                    <field name="numero_habitacion"/>
+                    <field name="sintomas"/>
+                    <field name="dias_ingresado" readonly="1"/>
+                    
+                    </list>
+                </field>
+            </record>
+
+        <record model="ir.ui.view" id="hospital2.ingreso_calendar">
+            <field name="name">hospital2 ingreso calendar</field>
+            <field name="model">hospital2.ingreso</field>
+            <field name="arch" type="xml">
+            <calendar date_start="fecha_ingreso" date_stop="fecha_alta" color="paciente_id" mode="month">
+                <field name="paciente_id"/>
+                <field name="medico_id"/>
+                <field name="fecha_ingreso"/>
+                <field name="fecha_alta"/>
+                <field name="sintomas"/>
+                <field name="dias_ingresado" readonly="1"/>
+
+            </calendar>
+            </field>
+        </record>
+
+
+        <!-- LISTA -->
+        <record model="ir.ui.view" id="hospital2_ingreso_list">
+            <field name="name">hospital2 ingreso list</field>
+            <field name="model">hospital2.ingreso</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="fecha_ingreso"/>
+                    <field name="fecha_alta"/>
+                    <field name="paciente_id"/>
+                    <field name="medico_id"/>
+                    <field name="numero_habitacion"/>
+                    <field name="dias_ingresado" readonly="1"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- CALENDAR -->
+        <record model="ir.ui.view" id="hospital2_ingreso_calendar">
+            <field name="name">hospital2 ingreso calendar</field>
+            <field name="model">hospital2.ingreso</field>
+            <field name="arch" type="xml">
+                <calendar date_start="fecha_ingreso"
+                          date_stop="fecha_alta"
+                          color="paciente_id">
+                    <field name="paciente_id"/>
+                    <field name="medico_id"/>
+                    <field name="numero_habitacion"/>
+                    <field name="dias_ingresado"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- SEARCH DE INGRESO 
+        <record model="ir.ui.view" id="hospital2_ingreso_search">
+            <field name="name">hospital2 ingreso search</field>
+            <field name="model">hospital2.ingreso</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="paciente_id"/>
+                    <field name="medico_id"/>
+
+                    <filter string="Ingresos activos"
+                            domain="[('fecha_alta','=',False)]"/>
+
+                    <filter string="Más de 10 días"
+                            domain="[('dias_ingresado','>',10)]"/>
+
+                    <filter string="Por médico"
+                            context="{'group_by':'medico_id'}"/>
+                </search>
+            </field>
+        </record>-->
+
+
+        
+
+
+
+    
+    </data>
+</odoo>
